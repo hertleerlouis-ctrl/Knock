@@ -2,7 +2,7 @@ $dir = "$env:APPDATA\Microsoft\AudioSvc"
 $soundPath = "$dir\tab.wav"
 
 if (-not (Test-Path $soundPath)) {
-    certutil -urlcache -f "REPLACE_WITH_WAV_URL" $soundPath | Out-Null
+    certutil -urlcache -f "https://raw.githubusercontent.com/hertleerlouis/Knock/main/door-knock.wav" $soundPath | Out-Null
 }
 
 $player = New-Object System.Media.SoundPlayer $soundPath
